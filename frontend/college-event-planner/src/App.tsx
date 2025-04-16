@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Events from './pages/Events'
 import Logout from './components/LoginPage/Logout'
 import Reminder from './components/EventPage/Reminder'
-import EventList from './components/EventPage/EventList';
+
 
 function App() {
   const storedUserId = localStorage.getItem('user_id');
@@ -21,7 +21,6 @@ function App() {
             <Route path='/myevents' element={<MyEvents userId={userId}/>} />
             <Route path="/logout" element={<Logout />} />
             <Route path='/event/reminder' element={<Reminder/>} />
-            <Route path='/event-list' element={<EventList/>} />
           </Routes>
         </Router>
 

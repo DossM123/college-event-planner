@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import EventDetailsButton from './EventDetails';
 import RegisterButton from './EventRegister';
 import '../../styles/EventList.css';
-import ReminderSettings from './ReminderSetting';
 import SearchBar from './SearchBar';
 
 interface Event {
@@ -149,8 +148,6 @@ const EventList: React.FC<EventListProps> = ({ categoryId }) => {
               <p><strong>Description:</strong> {event.description || 'No description'}</p>
               <p><strong>Organizer ID:</strong> {event.organizer_id ?? 'N/A'}</p>
               
-              
-                <ReminderSettings userId={userId} eventId={event.event_id} defaultTime={60} />
                 <div className='EventButton'>
                 <RegisterButton userId={userId} eventId={event.event_id} disabled={status === 'Past'} />
                 <EventDetailsButton event={event} />

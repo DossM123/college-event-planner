@@ -12,7 +12,9 @@ const ReminderSettings: React.FC<ReminderSettingsProps> = ({ userId, eventId, de
 
   const handleSave = async () => {
     try {
-      const formattedTime = `00:${String(minutesBefore).padStart(2, '0')}:00`; 
+      const hours = Math.floor(minutesBefore / 60);
+      const minutes = minutesBefore % 60;
+      const formattedTime = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`;
 
       await axios.post("http://localhost:3000/event/reminder", {
         userId,
@@ -34,6 +36,8 @@ const ReminderSettings: React.FC<ReminderSettingsProps> = ({ userId, eventId, de
         <option value={15}>15 minutes before</option>
         <option value={30}>30 minutes before</option>
         <option value={50}>50 minutes before</option>
+        <option value={60}>1 hour before</option>
+        <option value={90}>1 hour 30 minutes before</option>
       </select>
       <button onClick={handleSave}>Set Reminder</button>
     </div>
@@ -41,3 +45,4 @@ const ReminderSettings: React.FC<ReminderSettingsProps> = ({ userId, eventId, de
 };
 
 export default ReminderSettings;
+

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 import '../../styles/MyEvents.css';
+import ReminderSettings from './ReminderSetting';
 
 interface Event {
   event_id: number;
@@ -77,6 +78,7 @@ const MyEvents: React.FC<MyEventsProps> = ({ userId }) => {
               <p><strong>Time:</strong> {event.event_time}</p>
               <p><strong>Location:</strong> {event.location}</p>
               <p><strong>Description:</strong> {event.description}</p>
+              <ReminderSettings userId={userId} eventId={event.event_id} defaultTime={60} />
               <button onClick={() => handleCancel(event.event_id)} className="cancel-btn">
                 Cancel Registration
               </button>

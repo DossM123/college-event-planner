@@ -23,6 +23,17 @@ const Reminder: React.FC = () => {
   const userId = Number(localStorage.getItem("user_id"));
 
   useEffect(() => {
+    const stored = sessionStorage.getItem("alertedReminders");
+    if (stored) {
+      setAlertedReminders(new Set(JSON.parse(stored)));
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("alertedReminders", JSON.stringify(Array.from(alertedReminders)));
+  }, [alertedReminders]);
+
+  useEffect(() => {
     const fetchReminders = async () => {
       if (!userId || isNaN(userId)) {
         setError("Invalid user ID. Please log in again.");
@@ -56,26 +67,41 @@ const Reminder: React.FC = () => {
         const [hours, minutes, seconds] = reminder.event_time.split(":").map(Number);
         const eventDateTime = new Date(year, month - 1, day, hours, minutes, seconds);
 
+        if (eventDateTime <= now) return; // Skip past events
+
         const [remHours, remMinutes, remSeconds] = reminder.reminder_time.split(":").map(Number);
         const reminderMs = (remHours * 3600 + remMinutes * 60 + remSeconds) * 1000;
-
         const triggerTime = new Date(eventDateTime.getTime() - reminderMs);
+
         if (
           now >= triggerTime &&
           now <= new Date(triggerTime.getTime() + 60 * 1000)
         ) {
           alert(
-            `Reminder: ${reminder.title} is starting in ${remMinutes} minutes at ${reminder.event_time} at ${reminder.location}!`
+            `Reminder: ${reminder.title} is starting in ${remMinutes + remHours * 60} minutes at ${reminder.event_time} at ${reminder.location}!`
           );
           setAlertedReminders((prev) => new Set(prev).add(reminder.event_id));
         }
       });
     };
+
     const intervalId = setInterval(checkReminders, 60 * 1000);
     checkReminders();
 
     return () => clearInterval(intervalId);
   }, [reminders, alertedReminders]);
+
+  const formatReminderTime = (timeStr: string) => {
+    const [hours, minutes] = timeStr.split(":").map(Number);
+    const totalMinutes = hours * 60 + minutes;
+
+    if (totalMinutes >= 60) {
+      return `${Math.floor(totalMinutes / 60)} hour(s)${
+        totalMinutes % 60 !== 0 ? ` ${totalMinutes % 60} minute(s)` : ""
+      }`;
+    }
+    return `${totalMinutes} minute(s)`;
+  };
 
   return (
     <div className="reminder-container">
@@ -111,7 +137,7 @@ const Reminder: React.FC = () => {
                   <strong>Location:</strong> {reminder.location}
                 </p>
                 <p>
-                  <strong>Remind Me:</strong> {reminder.reminder_time} before event
+                  <strong>Remind Me:</strong> {formatReminderTime(reminder.reminder_time)} before event
                 </p>
               </li>
             ))}
