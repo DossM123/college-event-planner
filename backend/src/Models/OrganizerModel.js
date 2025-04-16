@@ -1,6 +1,5 @@
 const db = require('../config/db');
 
-// Function to fetch user by userId
 const getUserById = async (userId) => {
   try {
     const [rows] = await db.execute(
