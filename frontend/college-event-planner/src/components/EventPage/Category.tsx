@@ -25,7 +25,6 @@ const CategoryDropdown: React.FC<CategoryDropdownProps> = ({ onCategoryChange })
         console.error('Error fetching categories:', error);
       }
     };
-
     fetchCategories();
   }, []);
 

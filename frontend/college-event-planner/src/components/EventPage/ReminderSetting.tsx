@@ -45,4 +45,3 @@ const ReminderSettings: React.FC<ReminderSettingsProps> = ({ userId, eventId, de
 };
 
 export default ReminderSettings;
-

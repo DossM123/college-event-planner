@@ -3,6 +3,7 @@ import EventDetailsButton from './EventDetails';
 import RegisterButton from './EventRegister';
 import '../../styles/EventList.css';
 import SearchBar from './SearchBar';
+import ShareButton from './ShareButton';
 
 interface Event {
   event_id: number;
@@ -151,6 +152,7 @@ const EventList: React.FC<EventListProps> = ({ categoryId }) => {
                 <div className='EventButton'>
                 <RegisterButton userId={userId} eventId={event.event_id} disabled={status === 'Past'} />
                 <EventDetailsButton event={event} />
+                <ShareButton eventTitle={event.title} eventId={event.event_id} />
                 </div>
               
             </div>
