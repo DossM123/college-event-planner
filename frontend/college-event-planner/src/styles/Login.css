@@ -1,77 +1,70 @@
+/* Login.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+}
+
 .login-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    min-height: 100vh;
-    background-color: #f0f8ff;
-    padding: 20px;
-    margin-left: 500px;
-    box-sizing: border-box;
-    text-align: center; 
-  }
-  
-  
-  .title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000080; /* Navy */
-    margin-bottom: 24px;
-    text-align: center;
-  }
-  
-  .login-form {
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-  }
-  
-  .login-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #003366;
-  }
-  
-  .LoginInput {
-    width: 100%;
-    padding: 10px 14px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  
-  .LoginInput:focus {
-    outline: none;
-    border-color: #1e90ff;
-    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
-  }
-  
-  .login-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #1e90ff; /* DodgerBlue */
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .login-btn:hover {
-    background-color: #1c7ed6;
-  }
-  
-  .login-form p {
-    margin: 10px 0;
-    font-size: 14px;
-  }
-  
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #000080;
+  font-size: 28px;
+}
+
+.LoginInput {
+  padding: 10px 12px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-btn {
+  background-color: #000080;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+.login-form a {
+  text-align: center;
+  text-decoration: none;
+  color: #000080;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.login-form a:hover {
+  text-decoration: underline;
+}

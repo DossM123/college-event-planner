@@ -56,9 +56,10 @@ const LoginPage: React.FC = () => {
 
     return (
         <div className="login-page">
-            <h2 className="title">Login</h2>
+            
 
             <form onSubmit={handleSubmit} className="login-form">
+            <h2 className="title">Login</h2>
                 <label>Email:</label>
                 <input
                     type="email"

@@ -67,6 +67,7 @@ body {
     flex-grow: 1;
     width: calc(100% - 220px);
     overflow-y: auto;
+    width: 100%;
   }
   
   

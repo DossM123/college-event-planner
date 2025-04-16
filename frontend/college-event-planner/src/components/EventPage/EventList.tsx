@@ -149,12 +149,13 @@ const EventList: React.FC<EventListProps> = ({ categoryId }) => {
               <p><strong>Description:</strong> {event.description || 'No description'}</p>
               <p><strong>Organizer ID:</strong> {event.organizer_id ?? 'N/A'}</p>
               
-              <div className='EventButton'>
+              
                 <ReminderSettings userId={userId} eventId={event.event_id} defaultTime={60} />
-                <RegisterButton userId={userId} eventId={event.event_id} />
-                <br />
+                <div className='EventButton'>
+                <RegisterButton userId={userId} eventId={event.event_id} disabled={status === 'Past'} />
                 <EventDetailsButton event={event} />
-              </div>
+                </div>
+              
             </div>
           );
         })}

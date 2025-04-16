@@ -1,95 +1,98 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+}
+
 .register-page {
-    display: flex;
-    flex-direction: column;
-    margin-left: 500px;
-    align-items: center;
-    justify-content: center; /* Vertical centering */
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  /* Title styling */
-  .title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Section to wrap the form */
-  .register-forms {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Main form box */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #000080;
+}
+
+.register-forms {
+  width: 100%;
+  max-width: 450px;
+}
+
+.register-content {
+  display: flex;
+  justify-content: center;
+}
+
+.register-box {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputLabel {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.RegisterInput {
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 20px 0;
+}
+
+.terms input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.accept {
+  font-size: 14px;
+  color: #333;
+}
+
+.register-btn {
+  background-color: #000080;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #001f7f;
+}
+
+@media (max-width: 500px) {
   .register-box {
-    background-color: #ffffff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+    padding: 30px 20px;
   }
-  
-  /* Label styling */
-  .InputLabel {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
+
+  .title {
+    font-size: 24px;
   }
-  
-  /* Input and select field styling */
-  .RegisterInput {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
-  }
-  
-  /* Terms checkbox area */
-  .terms {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .terms input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
-  .accept {
-    font-size: 14px;
-    color: #333;
-  }
-  
-  /* Submit button */
-  .register-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
-  }
-  
-  .register-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Error message styling */
-  p[style*="color: red"] {
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-  
+}
