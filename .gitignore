@@ -1,0 +1,15 @@
+# node_modules
+frontend/college-event-planner/node_modules/
+backend/node_modules/
+
+# build files
+frontend/college-event-planner/build/
+
+# environment variables
+**/.env
+
+# logs
+*.log
+
+# OS-specific
+.DS_Store

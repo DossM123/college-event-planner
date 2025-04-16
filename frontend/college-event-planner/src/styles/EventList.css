@@ -1,0 +1,109 @@
+/* EventList.css */
+
+.event-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-list-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.event-loading,
+.event-error {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 20px;
+}
+
+.retry-button {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.retry-button:hover {
+  background-color: #0056b3;
+}
+
+.event-section-heading {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.event-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.event-card {
+  flex: 1 1 calc(33.333% - 20px); /* Three per row with spacing */
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.event-status {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.event-status.today {
+  color: #ff9800;
+}
+
+.event-status.upcoming {
+  color: #4caf50;
+}
+
+.event-status.past {
+  color: #9e9e9e;
+}
+
+.EventButton {
+  margin-top: 12px;
+}
+
+.toggle-past-button {
+  margin: 20px 0;
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.toggle-past-button:hover {
+  background-color: #0056b3;
+}
+
+.no-events-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #888;
+}
